@@ -21,3 +21,14 @@ SIMS was built to go past routine ServiceNow admin tasks and show real applicati
 `ServiceNow (PDI)` · `Business Rules` · `Scheduled Jobs` · `Client Scripts` · `GlideRecord` · `Email Notifications`
 
 ## How It Works
+Incident created
+        │
+        ▼
+SLA tracking starts (Business Rule / SLA definition)
+        │
+        ▼
+Scheduled Job periodically checks elapsed time vs. SLA threshold
+        │
+        ├── Approaching breach ──▶ Escalate priority + notify assignment group
+        │
+        └── Within SLA ──▶ No action
